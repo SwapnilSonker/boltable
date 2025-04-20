@@ -1,19 +1,21 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import {startContainer} from "./../webcontainer"
 import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
 
+  useEffect(() => {
+    startContainer()
+  }, [])
+
   return (
     <>
-    <div className='flex flex-col items-center justify-center h-screen bg-black text-white'>
-      <h1 className='text-3xl font-bold underline mb-4'>
-        Hello Tailwind
-      </h1>
-      <button className='bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded'>
-        Click Me
-      </button>
+    <div className='p-4'>
+      <h1 className='text-xl font-bold'>Bolt+Lovable IDE</h1>
+      <p>Booting your webcontainer</p>
     </div>
+
     </>
 
   )
